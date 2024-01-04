@@ -13,14 +13,6 @@ const items = [
     },
     {
         id: 2,
-        title: "Ecommerce store",
-        img: "./eShop.png",
-        desc: "allinstore.pl, an online store is an ecommerce website or app where buyers can see a catalog of products or services and electronically purchase them. A typical representation of an online store is a brick-and-mortar retail business that also displays and sells its products on a website.",
-        tools: ["./reactIcon.png", "./strapiIcon.png", "./scssIcon.png"],
-        link: "https://allinstore.pl/"
-    },
-    {
-        id: 3,
         title: "FoodOrder App",
         img: "./foodorderImage.png",
         desc: "FoodOrder app is a type of restaurant delivery/ takeout software that connects consumers with local restaurants , by providing a convenient way to order food that's delivered to their doorstep. Application also intended for smartphones.",
@@ -28,12 +20,20 @@ const items = [
         link: "https://github.com/1dominik7/FoodOrderApp"
     },
     {
+        id: 3,
+        title: "Ecommerce App",
+        img: "./amazonImg.png",
+        desc: "An ecommerce app is a mobile application that allows users to browse and purchase products or services online. It includes features such as product listings, shopping cart functionality, payment processing, and order tracking. Users can conveniently shop and make purchases directly from their mobile devices, making it a popular choice for online shopping in today's digital age.",
+        tools: ["./reactNativeImg.png",'./tailwindImg.png', "./nodeIcon.png", "./mongodbIcon.png"],
+        link: "https://github.com/1dominik7/AmazonApp-ReactNative"
+    },
+    {
         id: 4,
-        title: "Blog",
-        img: "./blogImage.png",
-        desc: "A blog presenting completed projects, with the opportunity to post new information from the IT world..",
-        tools: ["./nextjsImage.png","./mongodbIcon.png"],
-        link: "https://github.com/1dominik7/projects/tree/TodoApp/todolist"
+        title: "MovieTicket App",
+        img: "./movieImg.png",
+        desc: "A movie ticket app is a convenient and user-friendly platform that allows users to browse and buy tickets for movies at their preferred theaters. It provides information about showtimes, seating availability, and upcoming releases, making it easy for users to plan their movie outings. With the option to choose seats and make online payments, the app streamlines the ticket purchasing process, saving time and effort. Overall, a movie ticket app enhances the movie-going experience by providing a hassle-free way to enjoy the latest films.",
+        tools: ["./reactNativeImg.png"],
+        link: "https://github.com/1dominik7/MovieApp-ReactNative"
     },
 ]
 
