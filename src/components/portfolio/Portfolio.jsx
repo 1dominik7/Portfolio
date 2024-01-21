@@ -23,18 +23,27 @@ const items = [
         id: 3,
         title: "Ecommerce App",
         img: "./amazonImg.png",
-        desc: "An ecommerce app is a mobile application that allows users to browse and purchase products or services online. It includes features such as product listings, shopping cart functionality, payment processing, and order tracking. Users can conveniently shop and make purchases directly from their mobile devices, making it a popular choice for online shopping in today's digital age.",
+        desc: "An ecommerce app is a mobile application that allows users to browse and purchase products or services online. It includes features such as product listings, shopping cart functionality, payment processing, and order tracking. Users can conveniently shop and make purchases directly from their mobile devices, making it a popular choice for online shopping in today's digital age. App for IOS and Android.",
         tools: ["./reactNativeImg.png",'./tailwindImg.png', "./nodeIcon.png", "./mongodbIcon.png"],
         link: "https://github.com/1dominik7/AmazonApp-ReactNative"
     },
     {
         id: 4,
+        title: "Travel App",
+        img: "./travelApp.png",
+        desc: "TravelApp is a comprehensive travel application designed to enhance every aspect of your journey. Whether you're a seasoned globetrotter or planning your first adventure, TravelApp has you covered with its user-friendly interface and powerful features. Say goodbye to travel hassles and hello to seamless, unforgettable experiences. App for IOS and Android",
+        tools: ["./reactNativeImg.png","./nodeIcon.png", "./mongodbIcon.png"],
+        link: "https://github.com/1dominik7/TravelApp-ReactNative"
+    },
+    {
+        id: 5,
         title: "MovieTicket App",
         img: "./movieImg.png",
-        desc: "A movie ticket app is a convenient and user-friendly platform that allows users to browse and buy tickets for movies at their preferred theaters. It provides information about showtimes, seating availability, and upcoming releases, making it easy for users to plan their movie outings. With the option to choose seats and make online payments, the app streamlines the ticket purchasing process, saving time and effort. Overall, a movie ticket app enhances the movie-going experience by providing a hassle-free way to enjoy the latest films.",
+        desc: "A movie ticket app is a convenient and user-friendly platform that allows users to browse and buy tickets for movies at their preferred theaters. It provides information about showtimes, seating availability, and upcoming releases, making it easy for users to plan their movie outings. With the option to choose seats and make online payments, the app streamlines the ticket purchasing process, saving time and effort. Overall, a movie ticket app enhances the movie-going experience by providing a hassle-free way to enjoy the latest films. App for IOS and Android",
         tools: ["./reactNativeImg.png"],
         link: "https://github.com/1dominik7/MovieApp-ReactNative"
     },
+
 ]
 
 const Single = ({item}) => {

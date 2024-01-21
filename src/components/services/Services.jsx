@@ -63,7 +63,7 @@ const Services = () => {
                 <button onClick={handleClick}>Go</button>
             </motion.div>
             <motion.div className="box" whileHover={{background: "lightgray", color: "black"}}>
-                <h2>Desing</h2>
+                <h2>Design</h2>
                 <p>Designing websites and mobile applications with a visually attractive and easy-to-use interface. Paying special attention to the functioning of all elements on the website and the comfort of use. Creating projects primarily tailored to user requirements.</p>
                 <button onClick={handleClick}>Go</button>
             </motion.div>
