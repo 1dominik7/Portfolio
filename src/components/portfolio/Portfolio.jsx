@@ -5,11 +5,24 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
+    title: "MeowCase-Store",
+    img: "./meow-Case.png",
+    desc: "Create custom cases for your iPhone with our app! Easily upload your favorite photos, customize the design, and preview it in real-time. Personalize your case with text, colors, and patterns, and have it printed and delivered right to your door. Protect your phone in style!",
+    tools: [
+      "./nextjs.png",
+      "./tsIcon.png",
+      "./prismaIconmodyfi.png",
+      "./tailwindImg.png",
+    ],
+    link: "https://meow-case-store-nextjs.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Podify",
     img: "./podify.png",
     desc: "Podify is a mobile application that allows you to listen to your favorite music. Discover your new favorite tracks and dive into a world of endless music with the Spotify app. Whether you're into chart-toppers or indie gems, we've got you covered. With personalized playlists, curated recommendations, and a vast library of songs, albums, and podcasts, there's something for every mood and moment. Plus, enjoy seamless integration across all your devices, so your music follows you wherever you go.",
     tools: [
-      "./reactIcon.png",
+      "./reactNativeImg.png",
       "./tsIcon.png",
       "./nodeIcon.png",
       "./mongodbIcon.png",
@@ -17,44 +30,32 @@ const items = [
     link: "https://www.podify.shop/",
   },
   {
-    id: 2,
-    title: "Smart Marketplace",
-    img: "./SmartMarketplace.png",
-    desc: "Smart marketplace is a mobile application, where users can buy and sell a wide variety of goods, including electronics, clothing, collectibles, and more. Users can buy and sell both new and used items through auctions or fixed-price listings. Smart Marketplace provides a user-friendly interface where sellers can create listings with detailed descriptions and photos, while buyers can browse, search, and buy on items of interest. The application allows the exchange of information between the buyer and the seller.",
-    tools: [
-      "./reactIcon.png",
-      "./tsIcon.png",
-      "./nodeIcon.png",
-      "./mongodbIcon.png",
-    ],
-    link: "https://smart-marketplace.shop/",
-  },
-  {
     id: 3,
-    title: "Booking App",
-    img: "./hotelbookingappImage.png",
-    desc: "hotelbookingapp.shop is an online platform where hotels and other types of accommodations make their rooms available to travelling guests from all over the globe. The channel will also help to facilitate the resulting reservations.",
+    title: "AkRacing-demo",
+    img: "./chair-Store.png",
+    desc: "App is a full-featured eCommerce copy of AKRacing platform specializing in high-quality ergonomic chairs for gamers and professionals. It offers a seamless shopping experience where users can explore a wide range of chairs, filter by style, comfort level, or price, and view product details through rich media like images and 3D models.The app includes an admin panel for easy management, allowing admins to add new products, track inventory, manage orders, and view customer insights. Built for convenience, it streamlines the purchasing process while giving administrators full control over the store's operations in real-time.",
     tools: [
-      "./reactIcon.png",
+      "./vueLogo.png",
       "./nodeIcon.png",
-      "./scssIcon.png",
       "./mongodbIcon.png",
     ],
-    link: "https://hotelbookingapp.shop/",
+    link: "https://akracingpage-vue.onrender.com/",
   },
   {
     id: 4,
-    title: "FoodOrder App",
-    img: "./foodorderImage.png",
-    desc: "FoodOrder app is a type of restaurant delivery/ takeout software that connects consumers with local restaurants , by providing a convenient way to order food that's delivered to their doorstep. Application also intended for smartphones.",
+    title: "RealEstate Website",
+    img: "./realestate.png",
+    desc: "Discover your dream home with our intuitive real estate app. Browse thousands of listings, from cozy apartments to luxurious estates, with ease. Our user-friendly interface allows you to filter by location, price, and amenities, ensuring you find the perfect property. With detailed property descriptions, HD photos, and virtual tours, you can explore homes from the comfort of your couch. Plus, stay updated on market trends and receive personalized recommendations tailored to your preferences. Whether you're buying, selling, or renting, our app streamlines the process, making your real estate journey seamless and stress-free.",
     tools: [
-      "./nextjsImage.png",
-      "./tailwindImg.png",
-      "./postgreSQLImg.png",
-      "./dockerImg.png",
+      "./reactIcon.png",
+      "./prismaIconmodyfi.png",
+      "./nodeIcon.png",
+      "./mongodbIcon.png",
+      "./socketIo.png",
     ],
-    link: "https://github.com/1dominik7/FoodOrderApp",
+    link: "https://www.realestate-web.shop/",
   },
+
   {
     id: 5,
     title: "Ecommerce App",
@@ -67,22 +68,6 @@ const items = [
       "./mongodbIcon.png",
     ],
     link: "https://github.com/1dominik7/AmazonApp-ReactNative",
-  },
-  {
-    id: 6,
-    title: "Travel App",
-    img: "./travelApp.png",
-    desc: "TravelApp is a comprehensive travel application designed to enhance every aspect of your journey. Whether you're a seasoned globetrotter or planning your first adventure, TravelApp has you covered with its user-friendly interface and powerful features. Say goodbye to travel hassles and hello to seamless, unforgettable experiences. App for IOS and Android",
-    tools: ["./reactNativeImg.png", "./nodeIcon.png", "./mongodbIcon.png"],
-    link: "https://github.com/1dominik7/TravelApp-ReactNative",
-  },
-  {
-    id: 7,
-    title: "MovieTicket App",
-    img: "./movieImg.png",
-    desc: "A movie ticket app is a convenient and user-friendly platform that allows users to browse and buy tickets for movies at their preferred theaters. It provides information about showtimes, seating availability, and upcoming releases, making it easy for users to plan their movie outings. With the option to choose seats and make online payments, the app streamlines the ticket purchasing process, saving time and effort. Overall, a movie ticket app enhances the movie-going experience by providing a hassle-free way to enjoy the latest films. App for IOS and Android",
-    tools: ["./reactNativeImg.png"],
-    link: "https://github.com/1dominik7/MovieApp-ReactNative",
   },
 ];
 
@@ -113,8 +98,8 @@ const Single = ({ item }) => {
             <div className="tools">
               <h3>Tools Used:</h3>
               <div className="icons">
-                {item.tools.map((item) => (
-                  <img className="icon" key={item.id} src={item} />
+                {item.tools.map((item, index) => (
+                  <img className="icon" key={index} src={item} />
                 ))}
               </div>
             </div>

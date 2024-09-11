@@ -1,113 +1,115 @@
-import { useRef, useState } from 'react'
-import './contact.scss'
-import {motion, useInView} from 'framer-motion'
-import emailjs from '@emailjs/browser';
+import { useRef, useState } from "react";
+import "./contact.scss";
+import { motion, useInView } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const variants = {
-    initial: {
-        y: 500,
-        opacity: 0
+  initial: {
+    y: 500,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
     },
-    animate:{
-        y:0,
-        opacity:1,
-        transition:{
-            duration: 0.5,
-            staggerChildren: 0.1,
-        }
-    }
-}
+  },
+};
 
 const Contact = () => {
+  const ref = useRef();
+  const formRef = useRef();
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-    const ref=useRef()
-    const formRef = useRef()
-    const [error, setError] = useState(false)
-    const [success, setSuccess] = useState(false)
+  const isInView = useInView(ref, { margin: "-100px" });
 
-    const isInView = useInView(ref, {margin:"-100px"})
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-    
-        emailjs.sendForm('service_krusygf', 'template_35a964i', formRef.current, 'MssIIVt9HvBv7M8ed')
-          .then((result) => {
-            setSuccess(true)
-          }, (error) => {
-            setError(true)
-          });
-      };
+    emailjs
+      .sendForm(
+        "service_krusygf",
+        "template_35a964i",
+        formRef.current,
+        "MssIIVt9HvBv7M8ed"
+      )
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setError(true);
+        }
+      );
+  };
 
   return (
-    <motion.div 
-        ref={ref} 
-        className='contact' 
-        variants={variants} 
-        initial="initial" 
-        whileInView="animate"
+    <motion.div
+      ref={ref}
+      className="contact"
+      variants={variants}
+      initial="initial"
+      whileInView="animate"
     >
-        <motion.div className="textContainer" variants={variants}>
-            <motion.h1 variants={variants}>Let's work together</motion.h1>
-            <motion.div className="item" variants={variants}>
-                <h2>Mail</h2>
-                <span>dominik.wicek1@gmail.com</span>
-            </motion.div>
-            <motion.div className="item" variants={variants}>
-                <h2>Location</h2>
-                <span>Poland</span>
-            </motion.div>
-            <motion.div className="item" variants={variants}>
-                <h2>Phone</h2>
-                <span>+48 665 394 902</span>
-            </motion.div>
+      <motion.div className="textContainer" variants={variants}>
+        <motion.h1 variants={variants}>Let's work together</motion.h1>
+        <motion.div className="item" variants={variants}>
+          <h2>Mail</h2>
+          <span>dominik.wicek1@gmail.com</span>
         </motion.div>
-        <div className="formContainer">
-        <motion.div 
-            className="phoneSvg" 
-            initial={{opacity: 1}} 
-            whileInView={{opacity: 0}} 
-            transition={{delay: 3, duration: 1}}
-            >
-        <svg width="450px" height="450px" viewBox="0 0 32.666 32.666">
+        <motion.div className="item" variants={variants}>
+          <h2>Location</h2>
+          <span>Poland</span>
+        </motion.div>
+        <motion.div className="item" variants={variants}>
+          <h2>Phone</h2>
+          <span>+48 665 394 902</span>
+        </motion.div>
+      </motion.div>
+      <div className="formContainer">
+        <motion.div
+          className="phoneSvg"
+          initial={{ opacity: 1 }}
+          whileInView={{ opacity: 0 }}
+          transition={{ delay: 2, duration: 1 }}
+        >
+          <svg
+            width="450px"
+            height="450px"
+            viewBox="0 0 64 64"
+            preserveAspectRatio="xMidYMid meet"
+            // viewBox="0 0 32.666 32.666"
+          >
             <motion.path
               strokeWidth={0.2}
               fill="none"
               initial={{ pathLength: 0 }}
               animate={isInView && { pathLength: 1 }}
-              transition={{ duration: 3 }}
-              d="M28.189,16.504h-1.666c0-5.437-4.422-9.858-9.856-9.858l-0.001-1.664C23.021,4.979,28.189,10.149,28.189,16.504z
-            M16.666,7.856L16.665,9.52c3.853,0,6.983,3.133,6.981,6.983l1.666-0.001C25.312,11.735,21.436,7.856,16.666,7.856z M16.333,0
-            C7.326,0,0,7.326,0,16.334c0,9.006,7.326,16.332,16.333,16.332c0.557,0,1.007-0.45,1.007-1.006c0-0.559-0.45-1.01-1.007-1.01
-            c-7.896,0-14.318-6.424-14.318-14.316c0-7.896,6.422-14.319,14.318-14.319c7.896,0,14.317,6.424,14.317,14.319
-            c0,3.299-1.756,6.568-4.269,7.954c-0.913,0.502-1.903,0.751-2.959,0.761c0.634-0.377,1.183-0.887,1.591-1.529
-            c0.08-0.121,0.186-0.228,0.238-0.359c0.328-0.789,0.357-1.684,0.555-2.518c0.243-1.064-4.658-3.143-5.084-1.814
-            c-0.154,0.492-0.39,2.048-0.699,2.458c-0.275,0.366-0.953,0.192-1.377-0.168c-1.117-0.952-2.364-2.351-3.458-3.457l0.002-0.001
-            c-0.028-0.029-0.062-0.061-0.092-0.092c-0.031-0.029-0.062-0.062-0.093-0.092v0.002c-1.106-1.096-2.506-2.34-3.457-3.459
-            c-0.36-0.424-0.534-1.102-0.168-1.377c0.41-0.311,1.966-0.543,2.458-0.699c1.326-0.424-0.75-5.328-1.816-5.084
-            c-0.832,0.195-1.727,0.227-2.516,0.553c-0.134,0.057-0.238,0.16-0.359,0.24c-2.799,1.774-3.16,6.082-0.428,9.292
-            c1.041,1.228,2.127,2.416,3.245,3.576l-0.006,0.004c0.031,0.031,0.063,0.06,0.095,0.09c0.03,0.031,0.059,0.062,0.088,0.095
-            l0.006-0.006c1.16,1.118,2.535,2.765,4.769,4.255c4.703,3.141,8.312,2.264,10.438,1.098c3.67-2.021,5.312-6.338,5.312-9.719
-            C32.666,7.326,25.339,0,16.333,0z"
+              transition={{ duration: 7 }}
+              d="M54.5058,18.9509c-0.0022-0.0026-0.0026-0.0059-0.0048-0.0085c-0.0224-0.0256-0.0533-0.0368-0.0776-0.0596    c-0.7969-0.7159-1.8391-1.1645-2.9922-1.1645H46.627V4.5234C46.627,2.5806,45.0464,1,43.1035,1H11.5938    C9.6509,1,8.0703,2.5806,8.0703,4.5234v54.9531C8.0703,61.4194,9.6509,63,11.5938,63h31.5098    c1.9429,0,3.5234-1.5806,3.5234-3.5234V43.6719h4.8042c1.2134,0,2.3118-0.4882,3.1218-1.2725    c0.0059-0.0059,0.014-0.0076,0.0198-0.0137c0.0016-0.0016,0.0019-0.0039,0.0035-0.0056c0.8331-0.8176,1.3535-1.9531,1.3535-3.2103    V22.2168C55.9297,20.9278,55.3774,19.7718,54.5058,18.9509z M51.4312,19.7183c0.1989,0,0.39,0.0293,0.5755,0.0734L38.1084,31.9175    L24.2022,19.793c0.1868-0.0447,0.3792-0.0747,0.5795-0.0747H51.4312z M33.4756,30.5323l-10.66,10.1625    c-0.3283-0.4235-0.5319-0.9485-0.5319-1.5248V22.2168c0-0.4269,0.1176-0.8231,0.307-1.175L33.4756,30.5323z M19.3521,3h15.9897    v1.3164c0,0.7256-0.5903,1.3159-1.3159,1.3159H20.668c-0.7256,0-1.3159-0.5903-1.3159-1.3159V3z M11.5938,3h5.7583v1.3164    c0,1.8286,1.4873,3.3159,3.3159,3.3159h13.3579c1.8286,0,3.3159-1.4873,3.3159-3.3159V3h5.7617    c0.8398,0,1.5234,0.6836,1.5234,1.5234v13.1948H24.7817c-1.1594,0-2.2072,0.4528-3.0056,1.1758    c-0.021,0.0201-0.0482,0.0295-0.0676,0.0518c-0.002,0.0023-0.0024,0.0054-0.0044,0.0077    c-0.8698,0.8208-1.4204,1.9758-1.4204,3.2633v0.1577h-3.8262c-0.5522,0-1,0.4478-1,1s0.4478,1,1,1h3.8262v4.2471h-3.8262    c-0.5522,0-1,0.4478-1,1s0.4478,1,1,1h3.8262v5.1733h-3.8262c-0.5522,0-1,0.4478-1,1s0.4478,1,1,1h3.8262v1.375    c0,2.4824,2.0176,4.502,4.498,4.502H44.627V55.749H10.0703V4.5234C10.0703,3.6836,10.7539,3,11.5938,3z M43.1035,61H11.5938    c-0.8398,0-1.5234-0.6836-1.5234-1.5234V57.749H44.627v1.7275C44.627,60.3164,43.9434,61,43.1035,61z M51.4312,41.6719H24.7817    c-0.0289,0-0.0556-0.0076-0.0842-0.0085l10.2917-9.8113l2.4619,2.1465c0.1885,0.1641,0.4229,0.2461,0.6572,0.2461    s0.4692-0.082,0.6572-0.2466l2.8806-2.5132l10.5753,10.0466C51.9716,41.6156,51.709,41.6719,51.4312,41.6719z M53.9297,39.1699    c0,0.3624-0.0811,0.7049-0.2201,1.0161L43.1602,30.1639l10.4601-9.1264c0.191,0.3529,0.3094,0.7506,0.3094,1.1793V39.1699z"
             />
           </svg>
-          </motion.div>
-            <motion.form 
-              initial={{opacity: 0}} 
-              whileInView={{opacity: 1}} 
-              transition={{delay: 4, duration: 1}}
-              ref={formRef}
-              onSubmit={sendEmail}
-            >
-                <input type="text" required placeholder='Name' name="name"/>
-                <input type="email" required placeholder='Email' name="email"/>
-                <textarea rows={8} placeholder='Message' name="message"/>
-                <button>Submit</button>
-                {error && "Error"}
-                {success && "Success"}
-            </motion.form>
-        </div>
+        </motion.div>
+        <motion.form
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 3, duration: 1 }}
+          ref={formRef}
+          onSubmit={sendEmail}
+        >
+          <input type="text" required placeholder="Name" name="name" />
+          <input type="email" required placeholder="Email" name="email" />
+          <textarea rows={8} placeholder="Message" name="message" />
+          <button>Submit</button>
+          {error && "Error"}
+          {success && "Success"}
+        </motion.form>
+      </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
