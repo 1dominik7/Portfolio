@@ -7,7 +7,7 @@ const items = [
     id: 1,
     title: "MeowCase-Store",
     img: "./meow-Case.png",
-    desc: "Create custom cases for your iPhone with our app! Easily upload your favorite photos, customize the design, and preview it in real-time. Personalize your case with text, colors, and patterns, and have it printed and delivered right to your door. Protect your phone in style!",
+    desc: "MeowCase is an e-commerce platform developed using Next.js with TypeScript, leveraging the Kind library for user authentication and Neon for database management (a PostgreSQL platform). The app allows users to design and create custom cases for their iPhones, featuring the ability to upload images and personalize their cases. MeowCase provides a seamless shopping experience with secure authentication, fast performance, and an intuitive interface that makes it easy for users to create, preview, and order their custom cases directly from the app.",
     tools: [
       "./nextjs.png",
       "./tsIcon.png",
@@ -18,34 +18,9 @@ const items = [
   },
   {
     id: 2,
-    title: "Podify",
-    img: "./podify.png",
-    desc: "Podify is a mobile application that allows you to listen to your favorite music. Discover your new favorite tracks and dive into a world of endless music with the Spotify app. Whether you're into chart-toppers or indie gems, we've got you covered. With personalized playlists, curated recommendations, and a vast library of songs, albums, and podcasts, there's something for every mood and moment. Plus, enjoy seamless integration across all your devices, so your music follows you wherever you go.",
-    tools: [
-      "./reactNativeImg.png",
-      "./tsIcon.png",
-      "./nodeIcon.png",
-      "./mongodbIcon.png",
-    ],
-    link: "https://www.podify.shop/",
-  },
-  {
-    id: 3,
-    title: "AkRacing-demo",
-    img: "./chair-Store.png",
-    desc: "App is a full-featured eCommerce copy of AKRacing platform specializing in high-quality ergonomic chairs for gamers and professionals. It offers a seamless shopping experience where users can explore a wide range of chairs, filter by style, comfort level, or price, and view product details through rich media like images and 3D models.The app includes an admin panel for easy management, allowing admins to add new products, track inventory, manage orders, and view customer insights. Built for convenience, it streamlines the purchasing process while giving administrators full control over the store's operations in real-time.",
-    tools: [
-      "./vueLogo.png",
-      "./nodeIcon.png",
-      "./mongodbIcon.png",
-    ],
-    link: "https://akracingpage-vue.onrender.com/",
-  },
-  {
-    id: 4,
     title: "RealEstate Website",
     img: "./realestate.png",
-    desc: "Discover your dream home with our intuitive real estate app. Browse thousands of listings, from cozy apartments to luxurious estates, with ease. Our user-friendly interface allows you to filter by location, price, and amenities, ensuring you find the perfect property. With detailed property descriptions, HD photos, and virtual tours, you can explore homes from the comfort of your couch. Plus, stay updated on market trends and receive personalized recommendations tailored to your preferences. Whether you're buying, selling, or renting, our app streamlines the process, making your real estate journey seamless and stress-free.",
+    desc: "The real estate app is built using React.js for the frontend and Node.js on the backend, with MongoDB as the database, managed through Prisma. It allows users to buy, sell, or rent houses and apartments. Users can browse listings, post their own offers, and communicate directly with other users or professional real estate agents through a built-in messaging system. The app is optimized for fast, seamless interactions and provides an intuitive platform for real-time communication, whether you're searching for a home or managing your listings.",
     tools: [
       "./reactIcon.png",
       "./prismaIconmodyfi.png",
@@ -55,12 +30,32 @@ const items = [
     ],
     link: "https://www.realestate-web.shop/",
   },
-
+  {
+    id: 3,
+    title: "AkRacing-demo",
+    img: "./chair-Store.png",
+    desc: "AkRacing-DemoPage is an e-commerce platform built with Vue.js on the frontend, Node.js on the backend, and MongoDB for the database. It replicates the AKRacing store, offering a seamless experience for purchasing professional gaming and office chairs. The platform includes an admin panel that allows administrators to manage the store effectively, with features to add new products, edit existing ones, and oversee inventory. Users can easily browse chair models, view detailed product specs, and securely complete purchases. The admin panel ensures that product management and updates are simple and efficient.",
+    tools: ["./vueLogo.png", "./nodeIcon.png", "./mongodbIcon.png"],
+    link: "https://akracingpage-vue.onrender.com/",
+  },
+  {
+    id: 4,
+    title: "Podify",
+    img: "./podify.png",
+    desc: "Podify is a music streaming app developed with React Native and TypeScript on the frontend, and Node.js with MongoDB on the backend. The app allows users to listen to their favorite tracks, create and manage personalized playlists, and add songs to their favorites. Users can also upload their own music and share it with others, creating a community-driven platform for discovering new music. With features similar to Spotify, Podify offers a smooth, user-friendly experience, allowing you to enjoy and share music anytime, anywhere.",
+    tools: [
+      "./reactNativeImg.png",
+      "./tsIcon.png",
+      "./nodeIcon.png",
+      "./mongodbIcon.png",
+    ],
+    link: "https://www.podify.shop/",
+  },
   {
     id: 5,
     title: "Ecommerce App",
     img: "./amazonImg.png",
-    desc: "An ecommerce app is a mobile application that allows users to browse and purchase products or services online. It includes features such as product listings, shopping cart functionality, payment processing, and order tracking. Users can conveniently shop and make purchases directly from their mobile devices, making it a popular choice for online shopping in today's digital age. App for IOS and Android.",
+    desc: "The E-commerce app is an online shopping platform similar to Amazon, developed with React Native on the frontend and Node.js on the backend, with MongoDB for database management. It allows users to browse and purchase a wide variety of products across different categories. The app provides a smooth and user-friendly experience, enabling users to search for items, add them to their cart, and complete transactions securely. With a vast product selection and efficient order management, the app offers a comprehensive solution for shopping online from anywhere, anytime.",
     tools: [
       "./reactNativeImg.png",
       "./tailwindImg.png",
