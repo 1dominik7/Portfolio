@@ -1,27 +1,44 @@
 import { useRef } from "react";
 import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react"; 
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import "swiper/css";                // Core Swiper styles
-import "swiper/css/navigation";  
+import "swiper/css";
+import "swiper/css/navigation";
 
 const items = [
   {
     id: 1,
+    title: "Sport Shop",
+    desc: "This is a fully functional demo of an e-commerce platform focused on sports products. It features a user friendly storefront where customers can browse, search, and purchase various sports related items. The project also includes a comprehensive admin panel that allows managing products, orders, and user data efficiently.",
+    tools: [
+      { id: 1, url: "./reactIcon.png", name: "React" },
+      { id: 2, url: "./tailwindImg.png", name: "Tailwind Css" },
+      { id: 3, url: "./springboot.png", name: "Spring Boot" },
+      { id: 4, url: "./mongodbIcon.png", name: "MongoDB" },
+      { id: 5, url: "./postgreSQLImg.png", name: "PostgreSQL" },
+      { id: 6, url: "./mysql.png", name: "MySql" },
+      { id: 7, url: "./kafkalogo.png", name: "Kafka" },
+      { id: 8, url: "./rabbitmq.png", name: "RabbitMQ" },
+    ],
+    video: "./ecommerce-1.mp4",
+    link: "https://www.sport-shop.shop/",
+  },
+  {
+    id: 2,
     title: "MeowCase-Store",
     images: ["./meow1.png", "./meow2.png", "./meow3.png", "./meow4.png"],
     desc: "MeowCase is an e-commerce platform developed using Next.js with TypeScript, leveraging the Kind library for user authentication and Neon for database management (a PostgreSQL platform). The app allows users to design and create custom cases for their iPhones, featuring the ability to upload images and personalize their cases. MeowCase provides a seamless shopping experience with secure authentication, fast performance, and an intuitive interface that makes it easy for users to create, preview, and order their custom cases directly from the app.",
     tools: [
-      "./nextjs.png",
-      "./tsIcon.png",
-      "./prismaIconmodyfi.png",
-      "./tailwindImg.png",
+      { id: 1, url: "./nextjs.png", name: "Nextjs" },
+      { id: 2, url: "./tsIcon.png", name: "Typescript" },
+      { id: 3, url: "./prismaIconmodyfi.png", name: "Prisma" },
+      { id: 4, url: "./tailwindImg.png", name: "Tailwind Css" },
     ],
     link: "https://meow-case-store-nextjs.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "RealEstate Website",
     images: [
       "./realestate1.png",
@@ -31,24 +48,28 @@ const items = [
     ],
     desc: "The real estate app is built using React.js for the frontend and Node.js on the backend, with MongoDB as the database, managed through Prisma. It allows users to buy, sell, or rent houses and apartments. Users can browse listings, post their own offers, and communicate directly with other users or professional real estate agents through a built-in messaging system. The app is optimized for fast, seamless interactions and provides an intuitive platform for real-time communication, whether you're searching for a home or managing your listings.",
     tools: [
-      "./reactIcon.png",
-      "./prismaIconmodyfi.png",
-      "./nodeIcon.png",
-      "./mongodbIcon.png",
-      "./socketIo.png",
+      { id: 1, url: "./reactIcon.png", name: "React" },
+      { id: 2, url: "./prismaIconmodyfi.png", name: "Prisma" },
+      { id: 3, url: "./nodeIcon.png", name: "Nodejs" },
+      { id: 4, url: "./mongodbIcon.png", name: "MongoDB" },
+      { id: 5, url: "./socketIo.png", name: "Socket.IO" },
     ],
     link: "https://www.realestate-web.shop/",
   },
   {
-    id: 3,
+    id: 4,
     title: "AkRacing-demo",
     images: ["./chair1.png", "./chair2.png", "./chair3.png", "./chair4.png"],
     desc: "AkRacing-DemoPage is an e-commerce platform built with Vue.js on the frontend, Node.js on the backend, and MongoDB for the database. It replicates the AKRacing store, offering a seamless experience for purchasing professional gaming and office chairs. The platform includes an admin panel that allows administrators to manage the store effectively, with features to add new products, edit existing ones, and oversee inventory. Users can easily browse chair models, view detailed product specs, and securely complete purchases. The admin panel ensures that product management and updates are simple and efficient.",
-    tools: ["./vueLogo.png", "./nodeIcon.png", "./mongodbIcon.png"],
+    tools: [
+      { id: 1, url: "./vueLogo.png", name: "Vue" },
+      { id: 2, url: "./nodeIcon.png", name: "Nodejs" },
+      { id: 3, url: "./mongodbIcon.png", name: "MongoDB" },
+    ],
     link: "https://akracingpage-vue.onrender.com/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Podify",
     images: [
       "./podify1.png",
@@ -58,15 +79,15 @@ const items = [
     ],
     desc: "Podify is a music streaming app developed with React Native and TypeScript on the frontend, and Node.js with MongoDB on the backend. The app allows users to listen to their favorite tracks, create and manage personalized playlists, and add songs to their favorites. Users can also upload their own music and share it with others, creating a community-driven platform for discovering new music. With features similar to Spotify, Podify offers a smooth, user-friendly experience, allowing you to enjoy and share music anytime, anywhere.",
     tools: [
-      "./reactNativeImg.png",
-      "./tsIcon.png",
-      "./nodeIcon.png",
-      "./mongodbIcon.png",
+      { id: 1, url: "./reactNativeImg.png", name: "React Native" },
+      { id: 2, url: "./tsIcon.png", name: "Typescript" },
+      { id: 3, url: "./nodeIcon.png", name: "Nodejs" },
+      { id: 4, url: "./mongodbIcon.png", name: "MongoDB" },
     ],
     link: "https://www.podify.shop/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Ecommerce App",
     images: [
       "./amazon1.png",
@@ -76,10 +97,10 @@ const items = [
     ],
     desc: "The E-commerce app is an online shopping platform similar to Amazon, developed with React Native on the frontend and Node.js on the backend, with MongoDB for database management. It allows users to browse and purchase a wide variety of products across different categories. The app provides a smooth and user-friendly experience, enabling users to search for items, add them to their cart, and complete transactions securely. With a vast product selection and efficient order management, the app offers a comprehensive solution for shopping online from anywhere, anytime.",
     tools: [
-      "./reactNativeImg.png",
-      "./tailwindImg.png",
-      "./nodeIcon.png",
-      "./mongodbIcon.png",
+      { id: 1, url: "./reactNativeImg.png", name: "React Native" },
+      { id: 2, url: "./tailwindImg.png", name: "Tailwind Css" },
+      { id: 3, url: "./nodeIcon.png", name: "Nodejs" },
+      { id: 4, url: "./mongodbIcon.png", name: "MongoDB" },
     ],
     link: "https://github.com/1dominik7/AmazonApp-ReactNative",
   },
@@ -104,9 +125,16 @@ const Single = ({ item }) => {
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
-            {item.images.map((img, index) => (
-              <img src={img} alt="" key={index} />
-            ))}
+            {item?.images ? (
+              item?.images?.map((img, index) => (
+                <img src={img} alt="" key={index} />
+              ))
+            ) : (
+              <video controls width="100%" preload="metadata" autoPlay muted>
+                <source src={item?.video} type="video/mp4" />
+                Your browser doesn't support this video tag.
+              </video>
+            )}
           </div>
           <div className="tabletMobile">
             <Swiper
@@ -115,11 +143,18 @@ const Single = ({ item }) => {
               navigation={true}
               modules={[Navigation]}
             >
-              {item.images.map((img, index) => (
-                <SwiperSlide key={index}>
-                  <img src={img} alt="" />
-                </SwiperSlide>
-              ))}
+              {item?.images ? (
+                item?.images?.map((img, index) => (
+                  <SwiperSlide key={index}>
+                    <img src={img} alt="" />
+                  </SwiperSlide>
+                ))
+              ) : (
+                <video controls width="100%" preload="metadata">
+                  <source src={item?.video} type="video/mp4" />
+                  Your browser doesn't support this video tag.
+                </video>
+              )}
             </Swiper>
           </div>
           <motion.div className="textContainer" style={{ y }}>
@@ -128,8 +163,8 @@ const Single = ({ item }) => {
             <div className="tools">
               <h3>Tools Used:</h3>
               <div className="icons">
-                {item.tools.map((item, index) => (
-                  <img className="icon" key={index} src={item} />
+                {item.tools.map((item) => (
+                  <img className="icon" key={item?.id} src={item?.url} title={item?.name} />
                 ))}
               </div>
             </div>

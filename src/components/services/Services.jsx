@@ -37,24 +37,14 @@ const education = {
     "I began my programming education in 2021 by immersing myself in online courses and tutorials. Through dedicated self-study, I gained a strong foundation in both frontend and backend technologies, continually expanding my knowledge and skills to stay current with industry trends. My hands-on approach to learning has equipped me with practical experience and a deep understanding of full-stack development.",
   items: [
     {
-      institution: "studiuje.it",
-      degree: "Basic of web development",
-      duration: "2022",
+      institution: "Rzeszów University of Technology",
+      degree: "Master of Science in Management and Production Engineering",
+      duration: "2015 - 2021",
     },
     {
-      institution: "studiuje.it",
-      degree: "Intermediate frontend",
-      duration: "2022",
-    },
-    {
-      institution: "studiuje.it",
-      degree: "JavaScript from scratch",
-      duration: "2022",
-    },
-    {
-      institution: "udemy",
-      degree: "Many completed courses on udemy",
-      duration: "2022 - Present",
+      institution: "udemy and youtube",
+      degree: "Many completed courses on udemy and youtube",
+      duration: "2021 - Present",
     },
   ],
 };
@@ -62,7 +52,7 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Skilled in React, Vue, Node.js, React Native, Next.js, Nuxt.js. I bring a comprehensive full-stack expertise to both web and mobile development.",
+    "Skilled in React, Vue, Java, Node.js, React Native, Next.js I bring a comprehensive full-stack expertise to both web and mobile development.",
   skillList: [
     {
       icon: "/reactIcon.png",
@@ -73,16 +63,16 @@ const skills = {
       name: "React Native",
     },
     {
+      icon: "/springboot.png",
+      name: "Spring Boot",
+    },
+    {
       icon: "/nextjs.png",
       name: "Next.js",
     },
     {
       icon: "/vueLogo.png",
       name: "Vue",
-    },
-    {
-      icon: "/nuxtLogo.png",
-      name: "Nuxt.js",
     },
     {
       icon: "/nodeIcon.png",
